@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Erick Angayia — Systems Developer specializing in School, Church, SME & Financial Management Systems. Build institutional software that powers organizations.">
+  <title>Erick Angayia | Institutional Systems Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-page: #F8FAFC;
+      --bg-surface: #FFFFFF;
+      --border-light: #E2E8F0;
+      --primary: #1E3A5F;
+      --primary-dark: #0F2B44;
+      --primary-soft: #EFF6FF;
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #64748B;
+      --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-hover: 0 12px 24px -8px rgba(0, 0, 0, 0.08);
+      --transition: all 0.25s ease;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .navbar {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+    .logo a {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .logo span { font-weight: 500; color: var(--text-secondary); font-size: 0.85rem; }
+    .nav-links { display: flex; gap: 36px; align-items: center; align-content: center; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: var(--transition);
+      font-size: 0.9rem;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+    .btn-outline-light {
+      background: transparent;
+      border: 1px solid var(--border-light);
+      padding: 8px 20px;
+      border-radius: 32px;
+      font-weight: 500;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-outline-light:hover { background: var(--primary-soft); border-color: var(--primary); }
+
+    /* Hero Section with Image */
+    .hero { padding: 60px 0 50px; }
+    .hero-grid { display: flex; align-items: center; gap: 48px; flex-wrap: wrap; }
+    .hero-left { flex: 1.2; }
+    .hero-right { flex: 0.9; }
+    .hero-badge {
+      display: inline-flex;
+      background: var(--primary-soft);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+    .hero-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      color: var(--text-primary);
+    }
+    .hero-title .highlight { color: var(--primary); border-bottom: 3px solid var(--primary); }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .btn-group { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
+    .btn-primary {
+      background: var(--primary);
+      border: none;
+      padding: 12px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--border-light);
+      padding: 12px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .btn-secondary:hover { border-color: var(--primary); background: var(--primary-soft); transform: translateY(-2px); }
+    .hero-image-card {
+      background: var(--bg-surface);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+      border: 1px solid var(--border-light);
+    }
+    .hero-image-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    .code-snip {
+      padding: 14px 20px;
+      background: var(--bg-page);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border-light);
+    }
+    .stats-row {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+      padding: 24px 0;
+      border-top: 1px solid var(--border-light);
+      margin-top: 30px;
+    }
+    .stat-item h3 { font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+    .stat-item p { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+    section { padding: 70px 0; border-bottom: 1px solid var(--border-light); }
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+    .section-sub {
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin-bottom: 48px;
+      font-size: 1rem;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+    .card {
+      background: var(--bg-surface);
+      border-radius: 24px;
+      padding: 28px;
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+      box-shadow: var(--shadow-card);
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--primary-soft); }
+    .card-icon { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
+    .card h3 { font-size: 1.3rem; margin-bottom: 12px; }
+    .card p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px; }
+    .card-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 18px;
+      background: var(--bg-page);
+    }
+    .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tech-tag { background: var(--bg-page); padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 500; color: var(--primary); }
+    .project-feature-list { list-style: none; margin: 16px 0; }
+    .project-feature-list li { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .project-feature-list i { color: var(--primary); font-size: 0.7rem; width: 16px; }
+    .systems-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px,1fr)); gap: 28px; margin: 40px 0; }
+    .system-cat {
+      background: var(--bg-surface);
+      border-radius: 24px;
+      padding: 24px;
+      border: 1px solid var(--border-light);
+      text-align: center;
+      transition: var(--transition);
+    }
+    .system-cat:hover { transform: translateY(-4px); border-color: var(--primary-soft); }
+    .system-cat i { font-size: 2rem; color: var(--primary); margin-bottom: 12px; }
+    .contact-cta {
+      background: var(--primary-soft);
+      border-radius: 32px;
+      padding: 56px 48px;
+      text-align: center;
+      border: 1px solid var(--border-light);
+    }
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    /* HAMBURGER MENU STYLES - Enhanced */
+    .hamburger {
+      display: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--primary);
+      background: none;
+      border: none;
+      padding: 8px;
+      transition: var(--transition);
+      z-index: 1001;
+    }
+    .hamburger:hover {
+      color: var(--primary-dark);
+    }
+    
+    /* Mobile Navigation Overlay */
+    @media (max-width: 900px) {
+      .hero-grid { flex-direction: column; }
+      .hero-title { font-size: 2.4rem; }
+      .container { padding: 0 24px; }
+      .nav-links { 
+        display: none; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        z-index: 1000;
+        padding: 40px;
+        margin: 0;
+        transition: all 0.3s ease;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .nav-links li {
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 1.3rem;
+        padding: 12px 24px;
+        display: block;
+      }
+      .hamburger {
+        display: block;
+      }
+      .navbar .btn-outline-light {
+        display: none;
+      }
+      section { padding: 50px 0; }
+      .hero-right { width: 100%; margin-top: 20px; }
+      .stats-row { justify-content: center; text-align: center; }
+      .hero-left { text-align: center; }
+      .btn-group { justify-content: center; }
+      .hero-badge { margin-left: auto; margin-right: auto; }
+    }
+    
+    /* Close button inside mobile menu */
+    .close-menu {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--text-secondary);
+      transition: var(--transition);
+      background: none;
+      border: none;
+    }
+    .close-menu:hover {
+      color: var(--primary);
+      transform: scale(1.05);
+    }
+    @media (min-width: 901px) {
+      .close-menu { display: none; }
+      .nav-links { display: flex !important; }
+    }
+    .active-nav { color: var(--primary) !important; font-weight: 700; position: relative; }
+    .active-nav::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    @media (max-width: 900px) {
+      .active-nav::after { bottom: 8px; }
+    }
+    
+   
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <div class="logo"><a href="#">Erick Angayia <span>| Systems Developer</span></a></div>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    <ul class="nav-links" id="navLinks">
+      <button class="close-menu" id="closeMenuBtn" aria-label="Close menu"><i class="fas fa-times"></i></button>
+      <li><a href="#home" data-nav="home">Home</a></li>
+      <li><a href="#systems" data-nav="systems">Systems</a></li>
+      <li><a href="#projects" data-nav="projects">Projects</a></li>
+      <li><a href="#skills" data-nav="skills">Skills</a></li>
+      <li><a href="#contact" data-nav="contact">Contact</a></li>
+      <li><a href="https://wa.me/254746336294?text=Hello%20Erick%2C%20I'm%20interested%20in%20your%20institutional%20systems%20development%20services." target="_blank" class="btn-primary" style="background: #25D366;"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+    </ul>
+    <button class="btn-outline-light" id="contactQuickBtn"><i class="fas fa-calendar-alt"></i> Consultation</button>
+  </div>
+</nav>
+
+
+<main>
+  <!-- HERO SECTION -->
+  <div class="container" id="home">
+    <div class="hero">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="hero-badge"><i class="fas fa-building"></i> Trusted by 10+ Institutions | Kenya</div>
+          <h2 class="hero-title">Building digital systems that power <span class="highlight">churches, schools, and businesses</span></h2>
+          <p class="hero-desc">I develop custom management software — from school fees & exam systems to church member portals and SME business platforms. End-to-end solutions with admin dashboards, reports, and automation.</p>
+          <div class="btn-group">
+            <button class="btn-primary" id="exploreSystemsBtn"><i class="fas fa-arrow-right"></i> Explore Systems</button>
+            <a href="https://wa.me/254746336294?text=Hello%20Erick%2C%20I'd%20like%20to%20discuss%20a%20system%20for%20my%20institution." target="_blank" class="btn-secondary"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+          </div>
+          <div class="stats-row">
+            <div class="stat-item"><h3>10+</h3><p>INSTITUTIONS SERVED</p></div>
+            <div class="stat-item"><h3>98%</h3><p>CLIENT RETENTION</p></div>
+            <div class="stat-item"><h3>24/7</h3><p>SYSTEM SUPPORT</p></div>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-image-card">
+            <img src="images/hero.jpg" alt="Enterprise systems dashboard professional workspace">
+            <div class="code-snip"><i class="fas fa-terminal"></i> system.deploy('institution') → operational ✅</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SYSTEMS I BUILD SECTION -->
+  <section id="systems">
+    <div class="container">
+      <h2 class="section-title">Systems I Build for Organizations</h2>
+      <div class="section-sub">Complete operational software tailored to your industry needs.</div>
+      <div class="systems-grid">
+        <div class="system-cat"><i class="fas fa-church"></i><h3>Church Management</h3><p>Member portal, tithes/donations, events, groups & financial reports.</p></div>
+        <div class="system-cat"><i class="fas fa-school"></i><h3>School Management</h3><p>Students, fees, exams, attendance, report cards & parent portal.</p></div>
+        <div class="system-cat"><i class="fas fa-building"></i><h3>SME Business Systems</h3><p>Construction, plumbing, resorts — inventory, bookings, invoicing.</p></div>
+        <div class="system-cat"><i class="fas fa-chart-line"></i><h3>Finance Reconciliation</h3><p>Ledger management, audit trails, bank reconciliation, analytics dashboards.</p></div>
+        <div class="system-cat"><i class="fas fa-tachometer-alt"></i><h3>Admin Dashboards</h3><p>Role-based access (admin, accountant, staff), custom reports, exports.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured Institutional Solutions</h2>
+      <div class="section-sub">Real systems that automate operations and save thousands of hours.</div>
+      <div class="grid-3" id="projectsGrid"></div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Full-Stack Systems Expertise</h2>
+      <div class="section-sub">End-to-end development: frontend dashboards, backend logic, databases & security.</div>
+      <div class="grid-3" id="skillsGrid"></div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES SERVED -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Industries Served</h2>
+      <div class="section-sub">Tailored software for education, faith-based organizations, hospitality and construction.</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 48px; justify-content: center;">
+        <span class="tech-tag" style="background: var(--primary-soft); padding: 8px 20px;">🏫 Education & Schools</span>
+        <span class="tech-tag" style="background: var(--primary-soft); padding: 8px 20px;">⛪ Churches & Ministries</span>
+        <span class="tech-tag" style="background: var(--primary-soft); padding: 8px 20px;">🏨 Hospitality & Resorts</span>
+        <span class="tech-tag" style="background: var(--primary-soft); padding: 8px 20px;">🏗️ Construction & Contractors</span>
+        <span class="tech-tag" style="background: var(--primary-soft); padding: 8px 20px;">🛠️ Plumbing & Trades</span>
+      </div>
+      <div class="grid-3">
+        <div class="card"><i class="fas fa-shield-alt card-icon"></i><h3>Role-Based Access Control</h3><p>Admin, teacher, accountant, parent — granular permissions.</p></div>
+        <div class="card"><i class="fas fa-chart-pie card-icon"></i><h3>Reports & Analytics</h3><p>PDF/Excel exports, charts, financial summaries, audit trails.</p></div>
+        <div class="card"><i class="fas fa-database card-icon"></i><h3>Secure Data Management</h3><p>MySQL/PostgreSQL, automated backups, CRUD systems with logging.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Trusted by Institutional Leaders</h2>
+      <div class="grid-3">
+        <div class="card"><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><p style="margin-top: 16px;">“Erick built a complete school management system that reduced our fee collection time by 70%. The parent portal and report cards are seamless.”</p><strong style="color: var(--primary);">— Jane M., Principal, Brookside School</strong></div>
+        <div class="card"><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><p style="margin-top: 16px;">“Our church donor management and tithe reports are now fully automated. Reliable, secure and easy to use.”</p><strong style="color: var(--primary);">— Pastor David, Nairobi Chapel</strong></div>
+        <div class="card"><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><p style="margin-top: 16px;">“Finance reconciliation system saved us 30+ hours monthly. Audit trail and reporting are excellent.”</p><strong style="color: var(--primary);">— Peter O., CFO, Summit Enterprises</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT with WhatsApp integration -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-cta">
+        <h2 class="section-title" style="margin-bottom: 16px;">Let's build your institutional system</h2>
+        <p class="section-sub" style="margin-bottom: 32px;">Get a custom school, church, or business management solution tailored to your workflow.</p>
+        <div class="btn-group" style="justify-content: center;">
+          <a href="mailto:angayiaerick@gmail.com" class="btn-primary" style="text-decoration: none;"><i class="fas fa-envelope"></i> angayiaerick@gmail.com</a>
+          <a href="https://wa.me/254746336294?text=Hello%20Erick%2C%20I'm%20interested%20in%20getting%20a%20custom%20system%20for%20my%20institution." target="_blank" class="btn-primary" style="background: #25D366; text-decoration: none;"><i class="fab fa-whatsapp"></i> WhatsApp: +254 746 336 294</a>
+        </div>
+        <div style="margin-top: 32px; display: flex; gap: 28px; justify-content: center; flex-wrap: wrap;">
+          <span><i class="fas fa-clock"></i> Free Consultation</span>
+          <span><i class="fas fa-shield-alt"></i> 24/7 Support</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container">© 2026 Erick Angayia — Full-Stack Developer | Institutional & Business Systems. Built with security and scale in mind.</div>
+</footer>
+
+<script>
+  // Projects with images
+  const projectsData = [
+    { title: "School Management Suite", desc: "Complete system for student records, fees tracking, exam results, attendance & parent portal. Reduced fee collection delays by 70%.", features: ["Student registration", "Fee statements & payments", "Exam grading & report cards"], stack: ["React", "Node.js", "MySQL"], img: "images/schoolsystem.jpg" },
+    { title: "Church Management System", desc: "Member database, tithes/offerings, small groups, event registration and financial reporting.", features: ["Member directory", "Tithe & donation tracking", "Group management"], stack: ["Next.js", "Express", "PostgreSQL"], img: "images/churchsystem.jpg" },
+    { title: "Construction ERP Dashboard", desc: "Project tracking, supplier invoices, material inventory, contractor payroll dashboard.", features: ["Project milestones", "Expense approvals", "Inventory stock levels"], stack: ["Laravel", "React", "MongoDB"], img: "images/constuction.avif" },
+    { title: "Finance Reconciliation Engine", desc: "Bank statement matching, transaction categorization, ledger audit trails, and reconciliation reports.", features: ["Automated reconciliation", "Ledger import/export", "Audit logs"], stack: ["Django", "React", "PostgreSQL"], img: "images/finance.avif" },
+    { title: "Resort Booking & Management", desc: "Online booking, room inventory, guest check-in/out, billing and housekeeping module.", features: ["Room availability", "Invoice generation", "Guest history"], stack: ["Node.js", "Express", "MongoDB"], img: "images/resort.avif" },
+    { title: "Plumbing Business System", desc: "Job scheduling, customer invoices, stock tracking, technician routes & profit analytics.", features: ["Job assignment", "Inventory management", "Estimates & invoices"], stack: ["React", "Firebase", "Node.js"], img: "images/plumbing.jpg" }
+  ];
+
+
+  const projectsGrid = document.getElementById('projectsGrid');
+  if (projectsGrid) {
+    projectsGrid.innerHTML = projectsData.map(p => `
+      <div class="card">
+        <img class="card-img" src="${p.img}" alt="${p.title} dashboard interface" loading="lazy">
+        <i class="fas fa-database card-icon"></i>
+        <h3>${p.title}</h3>
+        <p>${p.desc}</p>
+        <ul class="project-feature-list">
+          ${p.features.map(f => `<li><i class="fas fa-check-circle"></i> ${f}</li>`).join('')}
+        </ul>
+        <div class="tech-stack">${p.stack.map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>
+      </div>
+    `).join('');
+  }
+
+  const skillsData = [
+    { name: "Frontend Dashboards", items: ["React / Next.js", "Tailwind / Admin Templates", "Responsive UI", "State Management"] },
+    { name: "Backend Systems", items: ["Node.js / Express", "Laravel / Django", "REST APIs", "Authentication (JWT, RBAC)"] },
+    { name: "Database & Infrastructure", items: ["MySQL / PostgreSQL", "MongoDB / Firebase", "Data Modeling", "Backup & Recovery"] },
+    { name: "Business Logic", items: ["CRUD Systems", "PDF/Excel Exports", "Payment Integration", "Reporting Engines"] }
+  ];
+  const skillsGrid = document.getElementById('skillsGrid');
+  if (skillsGrid) {
+    skillsGrid.innerHTML = skillsData.map(s => `
+      <div class="card">
+        <i class="fas fa-cogs card-icon"></i>
+        <h3>${s.name}</h3>
+        <ul style="margin-left: 18px; color: var(--text-secondary); font-size:0.9rem;">
+          ${s.items.map(i => `<li style="margin-bottom:6px;">• ${i}</li>`).join('')}
+        </ul>
+      </div>
+    `).join('');
+  }
+
+  // Navigation and WhatsApp interactions
+  document.getElementById('exploreSystemsBtn')?.addEventListener('click', () => document.getElementById('systems').scrollIntoView({ behavior: 'smooth' }));
+  document.getElementById('contactQuickBtn')?.addEventListener('click', () => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }));
+
+  // Enhanced Hamburger Menu Logic
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  const closeMenuBtn = document.getElementById('closeMenuBtn');
+  const navItems = document.querySelectorAll('.nav-links a[href^="#"]');
+  
+  function openMenu() {
+    navLinks.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeMenu() {
+    navLinks.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  
+  hamburgerBtn?.addEventListener('click', openMenu);
+  closeMenuBtn?.addEventListener('click', closeMenu);
+  
+  // Close menu when clicking on any nav link
+  navItems.forEach(link => {
+    link.addEventListener('click', (e) => {
+      closeMenu();
+      // Smooth scroll to section
+      const targetId = link.getAttribute('href');
+      if (targetId && targetId !== '#') {
+        e.preventDefault();
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+  
+  // Close menu on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('show')) {
+      closeMenu();
+    }
+  });
+
+  // Scroll Spy Active State
+  const sections = ['home', 'systems', 'projects', 'skills', 'contact'];
+  const navMenuItems = document.querySelectorAll('.nav-links a[data-nav]');
+  
+  function setActive() {
+    let current = '';
+    for (let id of sections) {
+      const el = document.getElementById(id);
+      if (el) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= 150 && rect.bottom >= 80) { current = id; break; }
+      }
+    }
+    navMenuItems.forEach(link => {
+      const href = link.getAttribute('data-nav');
+      if (href === current) link.classList.add('active-nav');
+      else link.classList.remove('active-nav');
+    });
+  }
+  window.addEventListener('scroll', setActive);
+  setActive();
+</script>
+</body>
+</html>
