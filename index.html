@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Erick Angayia — Systems Developer specializing in School, Church, SME & Financial Management Systems. Build institutional software that powers organizations.">
   <title>Erick Angayia | Institutional Systems Developer</title>
+  <!-- Gear icon (best for systems developer) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231E3A5F' rx='20'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' font-size='55' fill='white'%3E	>_ %3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -206,6 +207,11 @@
       border: 1px solid var(--border-light);
       transition: var(--transition);
       box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+    }
+    .card span{ 
+      display: inline-flex; gap: 4px; 
     }
     .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--primary-soft); }
     .card-icon { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
@@ -218,10 +224,15 @@
       border-radius: 16px;
       margin-bottom: 18px;
       background: var(--bg-page);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .card-img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; margin-bottom: 8px; }
     .tech-tag { background: var(--bg-page); padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 500; color: var(--primary); }
-    .project-feature-list { list-style: none; margin: 16px 0; }
+    .project-feature-list { list-style: none; margin: 16px 0 8px 0; flex-grow: 1; }
     .project-feature-list li { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
     .project-feature-list i { color: var(--primary); font-size: 0.7rem; width: 16px; }
     .systems-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px,1fr)); gap: 28px; margin: 40px 0; }
@@ -311,6 +322,10 @@
       .hero-left { text-align: center; }
       .btn-group { justify-content: center; }
       .hero-badge { margin-left: auto; margin-right: auto; }
+      .card .btn-primary {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+      }
     }
     
     /* Close button inside mobile menu */
@@ -348,7 +363,15 @@
       .active-nav::after { bottom: 8px; }
     }
     
-   
+    /* Button style consistency */
+    .card .btn-primary {
+      margin-top: 18px;
+      display: inline-flex;
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 10px 20px;
+      align-self: flex-start;
+    }
   </style>
 </head>
 <body>
@@ -415,7 +438,7 @@
     </div>
   </section>
 
-  <!-- PORTFOLIO PROJECTS -->
+  <!-- PORTFOLIO PROJECTS (ENHANCED CLICKABLE CARDS) -->
   <section id="projects">
     <div class="container">
       <h2 class="section-title">Featured Institutional Solutions</h2>
@@ -458,9 +481,9 @@
     <div class="container">
       <h2 class="section-title">Trusted by Institutional Leaders</h2>
       <div class="grid-3">
-        <div class="card"><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><p style="margin-top: 16px;">“Erick built a complete school management system that reduced our fee collection time by 70%. The parent portal and report cards are seamless.”</p><strong style="color: var(--primary);">— Jane M., Principal, Brookside School</strong></div>
-        <div class="card"><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><p style="margin-top: 16px;">“Our church donor management and tithe reports are now fully automated. Reliable, secure and easy to use.”</p><strong style="color: var(--primary);">— Pastor David, Nairobi Chapel</strong></div>
-        <div class="card"><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><p style="margin-top: 16px;">“Finance reconciliation system saved us 30+ hours monthly. Audit trail and reporting are excellent.”</p><strong style="color: var(--primary);">— Peter O., CFO, Summit Enterprises</strong></div>
+        <div class="card"><span><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i></span><p style="margin-top: 16px;">“Erick built a complete school management system that reduced our fee collection time by 70%. The parent portal and report cards are seamless.”</p><strong style="color: var(--primary);">— Jane M., Principal, Brookside School</strong></div>
+        <div class="card"><span><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i></span><p style="margin-top: 16px;">“Our church donor management and tithe reports are now fully automated. Reliable, secure and easy to use.”</p><strong style="color: var(--primary);">— Pastor David, Nairobi Chapel</strong></div>
+        <div class="card"><span><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i></span><p style="margin-top: 16px;">“Finance reconciliation system saved us 30+ hours monthly. Audit trail and reporting are excellent.”</p><strong style="color: var(--primary);">— Peter O., CFO, Summit Enterprises</strong></div>
       </div>
     </div>
   </section>
@@ -488,33 +511,94 @@
 </footer>
 
 <script>
-  // Projects with images
+  // Projects with clickable images and direct demo buttons (fully interactive)
   const projectsData = [
-    { title: "School Management Suite", desc: "Complete system for student records, fees tracking, exam results, attendance & parent portal. Reduced fee collection delays by 70%.", features: ["Student registration", "Fee statements & payments", "Exam grading & report cards"], stack: ["React", "Node.js", "MySQL"], <a href="https://erickwyte.github.io/school-demo/">
-    <img src="images/hero-section.jpg" 
-         alt="Umoja students in modern classroom" 
-         class="w-full h-auto object-cover">
-       </a> },
-    { title: "Church Management System", desc: "Member database, tithes/offerings, small groups, event registration and financial reporting.", features: ["Member directory", "Tithe & donation tracking", "Group management"], stack: ["Next.js", "Express", "PostgreSQL"], img: "images/churchsystem.jpg" },
-    { title: "Construction ERP Dashboard", desc: "Project tracking, supplier invoices, material inventory, contractor payroll dashboard.", features: ["Project milestones", "Expense approvals", "Inventory stock levels"], stack: ["Laravel", "React", "MongoDB"], img: "images/constuction.avif" },
-    { title: "Finance Reconciliation Engine", desc: "Bank statement matching, transaction categorization, ledger audit trails, and reconciliation reports.", features: ["Automated reconciliation", "Ledger import/export", "Audit logs"], stack: ["Django", "React", "PostgreSQL"], img: "images/finance.avif" },
-    { title: "Resort Booking & Management", desc: "Online booking, room inventory, guest check-in/out, billing and housekeeping module.", features: ["Room availability", "Invoice generation", "Guest history"], stack: ["Node.js", "Express", "MongoDB"], img: "images/resort.avif" },
-    { title: "Plumbing Business System", desc: "Job scheduling, customer invoices, stock tracking, technician routes & profit analytics.", features: ["Job assignment", "Inventory management", "Estimates & invoices"], stack: ["React", "Firebase", "Node.js"], img: "images/plumbing.jpg" }
+    { 
+      title: "School Management Suite", 
+      desc: "Complete system for student records, fees tracking, exam results, attendance & parent portal. Reduced fee collection delays by 70%.", 
+      features: ["Student registration", "Fee statements & payments", "Exam grading & report cards"], 
+      stack: ["React", "Node.js", "MySQL"], 
+      img: "https://placehold.co/600x400/1E3A5F/FFFFFF?text=School+Management+Demo",
+      demoLink: "https://erickwyte.github.io/school-demo/",
+      demoLabel: "View School Demo →"
+    },
+    { 
+      title: "Church Management System", 
+      desc: "Member database, tithes/offerings, small groups, event registration and financial reporting.", 
+      features: ["Member directory", "Tithe & donation tracking", "Group management"], 
+      stack: ["Next.js", "Express", "PostgreSQL"], 
+      img: "https://placehold.co/600x400/2C5F7A/FFFFFF?text=Church+System",
+      demoLink: "#systems",
+      demoLabel: "Learn More →"
+    },
+    { 
+      title: "Construction ERP Dashboard", 
+      desc: "Project tracking, supplier invoices, material inventory, contractor payroll dashboard.", 
+      features: ["Project milestones", "Expense approvals", "Inventory stock levels"], 
+      stack: ["Laravel", "React", "MongoDB"], 
+      img: "https://placehold.co/600x400/3D5A80/FFFFFF?text=Construction+ERP",
+      demoLink: "#contact",
+      demoLabel: "Request Demo →"
+    },
+    { 
+      title: "Finance Reconciliation Engine", 
+      desc: "Bank statement matching, transaction categorization, ledger audit trails, and reconciliation reports.", 
+      features: ["Automated reconciliation", "Ledger import/export", "Audit logs"], 
+      stack: ["Django", "React", "PostgreSQL"], 
+      img: "https://placehold.co/600x400/4B6F8C/FFFFFF?text=Finance+Engine",
+      demoLink: "#contact",
+      demoLabel: "Schedule Call →"
+    },
+    { 
+      title: "Resort Booking & Management", 
+      desc: "Online booking, room inventory, guest check-in/out, billing and housekeeping module.", 
+      features: ["Room availability", "Invoice generation", "Guest history"], 
+      stack: ["Node.js", "Express", "MongoDB"], 
+      img: "https://placehold.co/600x400/5D8A9F/FFFFFF?text=Resort+Booking",
+      demoLink: "#contact",
+      demoLabel: "See Features →"
+    },
+    { 
+      title: "Plumbing Business System", 
+      desc: "Job scheduling, customer invoices, stock tracking, technician routes & profit analytics.", 
+      features: ["Job assignment", "Inventory management", "Estimates & invoices"], 
+      stack: ["React", "Firebase", "Node.js"], 
+      img: "https://placehold.co/600x400/6F9FB2/FFFFFF?text=Plumbing+Solution",
+      demoLink: "#contact",
+      demoLabel: "Get Quote →"
+    }
   ];
 
-
+  // Render projects with premium interactive cards: image clickable, demo button, new tab support
   const projectsGrid = document.getElementById('projectsGrid');
   if (projectsGrid) {
     projectsGrid.innerHTML = projectsData.map(p => `
       <div class="card">
-        <img class="card-img" src="${p.img}" alt="${p.title} dashboard interface" loading="lazy">
+        <a href="${p.demoLink}" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+          <img class="card-img" src="${p.img}" alt="${p.title} dashboard interface" loading="lazy">
+        </a>
+
         <i class="fas fa-database card-icon"></i>
+
         <h3>${p.title}</h3>
+
         <p>${p.desc}</p>
+
         <ul class="project-feature-list">
           ${p.features.map(f => `<li><i class="fas fa-check-circle"></i> ${f}</li>`).join('')}
         </ul>
-        <div class="tech-stack">${p.stack.map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>
+
+        <div class="tech-stack">
+          ${p.stack.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+        </div>
+
+        <a href="${p.demoLink}" 
+           target="_blank" 
+           class="btn-primary"
+           style="margin-top:18px; display:inline-flex; text-decoration:none; font-size:0.85rem; padding:10px 20px;">
+           <i class="fas fa-external-link-alt"></i>
+           ${p.demoLabel}
+        </a>
       </div>
     `).join('');
   }
@@ -565,7 +649,6 @@
   navItems.forEach(link => {
     link.addEventListener('click', (e) => {
       closeMenu();
-      // Smooth scroll to section
       const targetId = link.getAttribute('href');
       if (targetId && targetId !== '#') {
         e.preventDefault();
