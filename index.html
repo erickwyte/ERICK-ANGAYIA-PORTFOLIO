@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Erick Angayia — Systems Developer specializing in School, Church, SME & Financial Management Systems. Build institutional software that powers organizations.">
-  <title>Erick Angayia | Institutional Systems Developer</title>
-  <!-- Gear icon (best for systems developer) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231E3A5F' rx='20'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' font-size='55' fill='white'%3E	>_ %3C/text%3E%3C/svg%3E">
+  <meta name="description" content="Erick Angayia — Web Developer in Kenya specializing in Websites for Schools, Churches, Resorts, Construction & Plumbing. M-Pesa integration, custom systems, and ongoing support.">
+  <title>Erick Angayia | Professional Websites & Business Systems</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231E3A5F' rx='20'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' font-size='55' fill='white'%3E&lt;/&gt;%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -89,7 +88,6 @@
     }
     .btn-outline-light:hover { background: var(--primary-soft); border-color: var(--primary); }
 
-    /* Hero Section with Image */
     .hero { padding: 60px 0 50px; }
     .hero-grid { display: flex; align-items: center; gap: 48px; flex-wrap: wrap; }
     .hero-left { flex: 1.2; }
@@ -219,12 +217,13 @@
     .card p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px; }
     .card-img {
       width: 100%;
-      height: 160px;
+      height: 180px;
       object-fit: cover;
       border-radius: 16px;
       margin-bottom: 18px;
       background: var(--bg-page);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid var(--border-light);
     }
     .card-img:hover {
       transform: scale(1.02);
@@ -260,7 +259,6 @@
       font-size: 0.8rem;
     }
 
-    /* HAMBURGER MENU STYLES - Enhanced */
     .hamburger {
       display: none;
       font-size: 1.6rem;
@@ -276,7 +274,6 @@
       color: var(--primary-dark);
     }
     
-    /* Mobile Navigation Overlay */
     @media (max-width: 900px) {
       .hero-grid { flex-direction: column; }
       .hero-title { font-size: 2.4rem; }
@@ -322,13 +319,8 @@
       .hero-left { text-align: center; }
       .btn-group { justify-content: center; }
       .hero-badge { margin-left: auto; margin-right: auto; }
-      .card .btn-primary {
-        font-size: 0.8rem;
-        padding: 8px 16px;
-      }
     }
     
-    /* Close button inside mobile menu */
     .close-menu {
       position: absolute;
       top: 24px;
@@ -363,14 +355,15 @@
       .active-nav::after { bottom: 8px; }
     }
     
-    /* Button style consistency */
-    .card .btn-primary {
-      margin-top: 18px;
-      display: inline-flex;
-      text-decoration: none;
-      font-size: 0.85rem;
-      padding: 10px 20px;
-      align-self: flex-start;
+    .demo-badge {
+      display: inline-block;
+      background: var(--primary-soft);
+      color: var(--primary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-bottom: 12px;
     }
   </style>
 </head>
@@ -378,56 +371,185 @@
 
 <nav class="navbar">
   <div class="container nav-inner">
-    <div class="logo"><a href="#">Erick Angayia <span>| Systems Developer</span></a></div>
+    <div class="logo"><a href="#">Erick Angayia <span>| Web Developer</span></a></div>
     <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
     <ul class="nav-links" id="navLinks">
       <button class="close-menu" id="closeMenuBtn" aria-label="Close menu"><i class="fas fa-times"></i></button>
       <li><a href="#home" data-nav="home">Home</a></li>
+      <li><a href="#demos" data-nav="demos">Live Demos</a></li>
       <li><a href="#systems" data-nav="systems">Systems</a></li>
       <li><a href="#projects" data-nav="projects">Projects</a></li>
       <li><a href="#skills" data-nav="skills">Skills</a></li>
       <li><a href="#contact" data-nav="contact">Contact</a></li>
-      <li><a href="https://wa.me/254746336294?text=Hello%20Erick%2C%20I'm%20interested%20in%20your%20institutional%20systems%20development%20services." target="_blank" class="btn-primary" style="background: #25D366;"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+      <li><a href="https://github.com/erickwyte" target="_blank">GitHub</a></li>
+      <li><a href="https://wa.me/254746336294?text=Hello%20Erick%2C%20I'm%20interested%20in%20your%20web%20development%20services." target="_blank" class="btn-primary" style="background: #25D366;"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
     </ul>
     <button class="btn-outline-light" id="contactQuickBtn"><i class="fas fa-calendar-alt"></i> Consultation</button>
   </div>
 </nav>
 
-
 <main>
-  <!-- HERO SECTION -->
   <div class="container" id="home">
     <div class="hero">
       <div class="hero-grid">
         <div class="hero-left">
-          <div class="hero-badge"><i class="fas fa-building"></i> Trusted by 10+ Institutions | Kenya</div>
-          <h2 class="hero-title">Building digital systems that power <span class="highlight">churches, schools, and businesses</span></h2>
-          <p class="hero-desc">I develop custom management software — from school fees & exam systems to church member portals and SME business platforms. End-to-end solutions with admin dashboards, reports, and automation.</p>
+          <div class="hero-badge"><i class="fas fa-globe "> </i> _Professional Websites & Business Systems | Kenya</div>
+          <h2 class="hero-title">Building professional websites and custom business systems that <span class="highlight">attract customers, automate work and grow organizations</span></h2>
+          <p class="hero-desc">I design professional websites for schools, churches, resorts, construction companies and service businesses — plus custom management systems with M-Pesa integration that automate operations and save you hours every day.</p>
           <div class="btn-group">
-            <button class="btn-primary" id="exploreSystemsBtn"><i class="fas fa-arrow-right"></i> Explore Systems</button>
-            <a href="https://wa.me/254746336294?text=Hello%20Erick%2C%20I'd%20like%20to%20discuss%20a%20system%20for%20my%20institution." target="_blank" class="btn-secondary"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+            <button class="btn-primary" id="exploreDemosBtn"><i class="fas fa-external-link-alt"></i> View Live Demos</button>
+            <a href="https://wa.me/254746336294?text=Hello%20Erick%2C%20I'd%20like%20to%20discuss%20a%20website%20for%20my%20organization." target="_blank" class="btn-secondary"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
           </div>
           <div class="stats-row">
-            <div class="stat-item"><h3>10+</h3><p>INSTITUTIONS SERVED</p></div>
-            <div class="stat-item"><h3>98%</h3><p>CLIENT RETENTION</p></div>
-            <div class="stat-item"><h3>24/7</h3><p>SYSTEM SUPPORT</p></div>
+            <div class="stat-item"><h3>5+</h3><p>LIVE WEBSITE DEMOS</p></div>
+            <div class="stat-item"><h3>Web</h3><p>WEBSITES & SYSTEMS</p></div>
+            <div class="stat-item"><h3>100%</h3><p>CUSTOM BUILT</p></div>
           </div>
         </div>
         <div class="hero-right">
           <div class="hero-image-card">
-            <img src="images/hero.jpg" alt="Enterprise systems dashboard professional workspace">
-            <div class="code-snip"><i class="fas fa-terminal"></i> system.deploy('institution') → operational ✅</div>
+            <img src="images/hero.jpg" alt="Web development portfolio showcase">
+            <div class="code-snip"><i class="fas fa-terminal"></i> website.deploy('business') → live ✅ | mpesa.integrate() → payments ✅</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- LIVE DEMOS SHOWCASE SECTION -->
+  <section id="demos" style="background: var(--bg-surface);">
+    <div class="container">
+      <h2 class="section-title">Live Website Demos</h2>
+      <div class="section-sub">Click any screenshot to see my work in action. These are real websites I've built for different industries — all responsive, modern, and production-ready.</div>
+      <div class="grid-3">
+        <!-- Resort Demo -->
+        <div class="card">
+          <img src="https://placehold.co/600x400/2c7da0/FFFFFF?text=Resort+Website+Demo" alt="Resort website demo screenshot" class="card-img">
+          <span class="demo-badge"><i class="fas fa-external-link-alt"></i> Live Demo</span>
+          <h3>Resort & Hotel Website</h3>
+          <p>A luxury resort website showcasing accommodations, amenities, gallery, and booking capabilities. Modern design optimized for guest engagement.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Responsive</span>
+          </div>
+          <a href="https://erickwyte.github.io/resort-demo/" target="_blank" class="btn-primary" style="margin-top: auto;">
+            <i class="fas fa-external-link-alt"></i> View Resort Demo →
+          </a>
+        </div>
+
+        <!-- School Demo -->
+        <div class="card">
+          <img src="https://placehold.co/600x400/2c5f2d/FFFFFF?text=School+Website+Demo" alt="School website demo screenshot" class="card-img">
+          <span class="demo-badge"><i class="fas fa-external-link-alt"></i> Live Demo</span>
+          <h3>School Website</h3>
+          <p>Professional school website with admissions info, academics, events calendar, staff directory, and parent resources section.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Responsive</span>
+          </div>
+          <a href="https://erickwyte.github.io/school-demo/" target="_blank" class="btn-primary" style="margin-top: auto;">
+            <i class="fas fa-external-link-alt"></i> View School Demo →
+          </a>
+        </div>
+
+        <!-- Plumbing Demo -->
+        <div class="card">
+          <img src="https://placehold.co/600x400/1e6f5c/FFFFFF?text=Plumbing+Website+Demo" alt="Plumbing services website demo screenshot" class="card-img">
+          <span class="demo-badge"><i class="fas fa-external-link-alt"></i> Live Demo</span>
+          <h3>Plumbing Services Website</h3>
+          <p>Lead-generation website for plumbing businesses featuring service listings, emergency contact, quote requests, and customer trust signals.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">SEO Ready</span>
+          </div>
+          <a href="https://erickwyte.github.io/plumbing-demo/" target="_blank" class="btn-primary" style="margin-top: auto;">
+            <i class="fas fa-external-link-alt"></i> View Plumbing Demo →
+          </a>
+        </div>
+
+        <!-- Construction Demo -->
+        <div class="card">
+          <img src="https://placehold.co/600x400/c9a03d/FFFFFF?text=Construction+Website+Demo" alt="Construction company website demo screenshot" class="card-img">
+          <span class="demo-badge"><i class="fas fa-external-link-alt"></i> Live Demo</span>
+          <h3>Construction Company Website</h3>
+          <p>Corporate website for construction firms showcasing projects, services, company profile, and client testimonials with quote request forms.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Responsive</span>
+          </div>
+          <a href="https://erickwyte.github.io/construction-demo/" target="_blank" class="btn-primary" style="margin-top: auto;">
+            <i class="fas fa-external-link-alt"></i> View Construction Demo →
+          </a>
+        </div>
+
+        <!-- Church Demo -->
+        <div class="card">
+          <img src="https://placehold.co/600x400/6c3483/FFFFFF?text=Church+Website+Demo" alt="Church website demo screenshot" class="card-img">
+          <span class="demo-badge"><i class="fas fa-external-link-alt"></i> Live Demo</span>
+          <h3>Church Website</h3>
+          <p>Complete church website featuring sermons, ministries, events calendar, online giving integration, and member engagement tools.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Mobile Friendly</span>
+          </div>
+          <a href="https://erickwyte.github.io/church-demo/" target="_blank" class="btn-primary" style="margin-top: auto;">
+            <i class="fas fa-external-link-alt"></i> View Church Demo →
+          </a>
+        </div>
+
+        <!-- Custom Systems Card -->
+        <div class="card">
+          <div class="card-img" style="background: linear-gradient(135deg, #1E3A5F, #0F2B44); display: flex; align-items: center; justify-content: center; color: white;">
+            <i class="fas fa-server" style="font-size: 4rem;"></i>
+          </div>
+          <span class="demo-badge"><i class="fas fa-cogs"></i> Custom Built</span>
+          <h3>Custom Management Systems</h3>
+          <p>Complete operational software for schools, churches, SMEs, and finance departments. Admin dashboards, reporting, role-based access, and automation.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">Django/Node.js</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">REST APIs</span>
+          </div>
+          <a href="#contact" class="btn-primary" style="margin-top: auto;">
+            <i class="fas fa-envelope"></i> Request System Demo →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO CTA - After Demos -->
+  <section>
+    <div class="container">
+      <div class="contact-cta">
+        <h2 class="section-title">Need a Website Like These?</h2>
+        <p class="section-sub">
+          Every demo shown above can be customized for your school, church, business, 
+          resort, construction company or organization.
+        </p>
+        <a href="https://wa.me/254746336294?text=Hello%20Erick%2C%20I%20need%20a%20website%20like%20the%20demos%20I%20saw." target="_blank" class="btn-primary">
+          <i class="fab fa-whatsapp"></i> Request Your Website
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- SYSTEMS I BUILD SECTION -->
   <section id="systems">
     <div class="container">
-      <h2 class="section-title">Systems I Build for Organizations</h2>
-      <div class="section-sub">Complete operational software tailored to your industry needs.</div>
+      <h2 class="section-title">Custom Management Systems I Build</h2>
+      <div class="section-sub">Complete operational software tailored to your organization's workflow.</div>
       <div class="systems-grid">
         <div class="system-cat"><i class="fas fa-church"></i><h3>Church Management</h3><p>Member portal, tithes/donations, events, groups & financial reports.</p></div>
         <div class="system-cat"><i class="fas fa-school"></i><h3>School Management</h3><p>Students, fees, exams, attendance, report cards & parent portal.</p></div>
@@ -438,11 +560,50 @@
     </div>
   </section>
 
-  <!-- PORTFOLIO PROJECTS (ENHANCED CLICKABLE CARDS) -->
+  <!-- WHY CHOOSE ME SECTION -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Why Work With Me?</h2>
+      <div class="grid-3">
+        <div class="card">
+          <i class="fas fa-bolt card-icon"></i>
+          <h3>Fast Delivery</h3>
+          <p>Professional websites delivered quickly without compromising quality. Most projects completed within 7-14 days.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-mobile-screen card-icon"></i>
+          <h3>Mobile First</h3>
+          <p>Every website is optimized for phones, tablets and desktops. Your customers access your site from anywhere.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-headset card-icon"></i>
+          <h3>Ongoing Support</h3>
+          <p>Maintenance, updates and technical assistance after launch. I don't disappear after delivering your site.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-mobile-alt card-icon"></i>
+          <h3>M-Pesa Integration</h3>
+          <p>Accept payments directly through M-Pesa, automate confirmations and generate receipts automatically.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-shield-alt card-icon"></i>
+          <h3>Secure & Reliable</h3>
+          <p>Clean code, security best practices, and regular backups to keep your site safe.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-chart-line card-icon"></i>
+          <h3>SEO Optimized</h3>
+          <p>Your website will be built to rank on Google and attract more customers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO PROJECTS -->
   <section id="projects">
     <div class="container">
-      <h2 class="section-title">Featured Institutional Solutions</h2>
-      <div class="section-sub">Real systems that automate operations and save thousands of hours.</div>
+      <h2 class="section-title">Featured Projects & Solutions</h2>
+      <div class="section-sub">A mix of professional websites and custom business systems I've delivered for clients.</div>
       <div class="grid-3" id="projectsGrid"></div>
     </div>
   </section>
@@ -450,8 +611,8 @@
   <!-- SKILLS SECTION -->
   <section id="skills">
     <div class="container">
-      <h2 class="section-title">Full-Stack Systems Expertise</h2>
-      <div class="section-sub">End-to-end development: frontend dashboards, backend logic, databases & security.</div>
+      <h2 class="section-title">Full-Stack Development Expertise</h2>
+      <div class="section-sub">From frontend websites to backend systems — I build complete digital solutions.</div>
       <div class="grid-3" id="skillsGrid"></div>
     </div>
   </section>
@@ -459,19 +620,15 @@
   <!-- INDUSTRIES SERVED -->
   <section>
     <div class="container">
-      <h2 class="section-title">Industries Served</h2>
-      <div class="section-sub">Tailored software for education, faith-based organizations, hospitality and construction.</div>
+      <h2 class="section-title">Industries I Serve</h2>
+      <div class="section-sub">Tailored websites and software for organizations across Kenya.</div>
       <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 48px; justify-content: center;">
-        <span class="tech-tag" style="background: var(--primary-soft); padding: 8px 20px;">🏫 Education & Schools</span>
+        <span class="tech-tag" style="background: var(--primary-soft); padding: 8px 20px;">🏫 Schools & Education</span>
         <span class="tech-tag" style="background: var(--primary-soft); padding: 8px 20px;">⛪ Churches & Ministries</span>
-        <span class="tech-tag" style="background: var(--primary-soft); padding: 8px 20px;">🏨 Hospitality & Resorts</span>
-        <span class="tech-tag" style="background: var(--primary-soft); padding: 8px 20px;">🏗️ Construction & Contractors</span>
+        <span class="tech-tag" style="background: var(--primary-soft); padding: 8px 20px;">🏨 Resorts & Hospitality</span>
+        <span class="tech-tag" style="background: var(--primary-soft); padding: 8px 20px;">🏗️ Construction Companies</span>
         <span class="tech-tag" style="background: var(--primary-soft); padding: 8px 20px;">🛠️ Plumbing & Trades</span>
-      </div>
-      <div class="grid-3">
-        <div class="card"><i class="fas fa-shield-alt card-icon"></i><h3>Role-Based Access Control</h3><p>Admin, teacher, accountant, parent — granular permissions.</p></div>
-        <div class="card"><i class="fas fa-chart-pie card-icon"></i><h3>Reports & Analytics</h3><p>PDF/Excel exports, charts, financial summaries, audit trails.</p></div>
-        <div class="card"><i class="fas fa-database card-icon"></i><h3>Secure Data Management</h3><p>MySQL/PostgreSQL, automated backups, CRUD systems with logging.</p></div>
+        <span class="tech-tag" style="background: var(--primary-soft); padding: 8px 20px;">🏢 SMEs & Startups</span>
       </div>
     </div>
   </section>
@@ -479,121 +636,113 @@
   <!-- TESTIMONIALS -->
   <section>
     <div class="container">
-      <h2 class="section-title">Trusted by Institutional Leaders</h2>
+      <h2 class="section-title">Trusted by Business & Institutional Leaders</h2>
       <div class="grid-3">
-        <div class="card"><span><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i></span><p style="margin-top: 16px;">“Erick built a complete school management system that reduced our fee collection time by 70%. The parent portal and report cards are seamless.”</p><strong style="color: var(--primary);">— Jane M., Principal, Brookside School</strong></div>
-        <div class="card"><span><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i></span><p style="margin-top: 16px;">“Our church donor management and tithe reports are now fully automated. Reliable, secure and easy to use.”</p><strong style="color: var(--primary);">— Pastor David, Nairobi Chapel</strong></div>
-        <div class="card"><span><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i></span><p style="margin-top: 16px;">“Finance reconciliation system saved us 30+ hours monthly. Audit trail and reporting are excellent.”</p><strong style="color: var(--primary);">— Peter O., CFO, Summit Enterprises</strong></div>
+        <div class="card"><span><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i></span><p style="margin-top: 16px;">"The school website Erick built for us has increased parent inquiries by 40%. Professional, fast, and great communication throughout."</p><strong style="color: var(--primary);">— Jane M., Principal, Brookside School</strong></div>
+        <div class="card"><span><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i></span><p style="margin-top: 16px;">"Our church website looks amazing and the online giving feature has made donations so much easier for our members."</p><strong style="color: var(--primary);">— Pastor David, Nairobi Chapel</strong></div>
+        <div class="card"><span><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i><i class="fas fa-star" style="color:#F5A623;"></i></span><p style="margin-top: 16px;">"The custom finance reconciliation system Erick built saved us over 30 hours of manual work every month. Highly recommend!"</p><strong style="color: var(--primary);">— Peter O., CFO, Summit Enterprises</strong></div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT with WhatsApp integration -->
+  <!-- CONTACT SECTION -->
   <section id="contact">
     <div class="container">
       <div class="contact-cta">
-        <h2 class="section-title" style="margin-bottom: 16px;">Let's build your institutional system</h2>
-        <p class="section-sub" style="margin-bottom: 32px;">Get a custom school, church, or business management solution tailored to your workflow.</p>
+        <h2 class="section-title" style="margin-bottom: 16px;">Ready to grow your online presence?</h2>
+        <p class="section-sub" style="margin-bottom: 32px;">Get a professional website for your business or a custom management system tailored to your needs.</p>
         <div class="btn-group" style="justify-content: center;">
           <a href="mailto:angayiaerick@gmail.com" class="btn-primary" style="text-decoration: none;"><i class="fas fa-envelope"></i> angayiaerick@gmail.com</a>
-          <a href="https://wa.me/254746336294?text=Hello%20Erick%2C%20I'm%20interested%20in%20getting%20a%20custom%20system%20for%20my%20institution." target="_blank" class="btn-primary" style="background: #25D366; text-decoration: none;"><i class="fab fa-whatsapp"></i> WhatsApp: +254 746 336 294</a>
+          <a href="https://wa.me/254746336294?text=Hello%20Erick%2C%20I'm%20interested%20in%20getting%20a%20website%20for%20my%20organization." target="_blank" class="btn-primary" style="background: #25D366; text-decoration: none;"><i class="fab fa-whatsapp"></i> WhatsApp: +254 746 336 294</a>
         </div>
         <div style="margin-top: 32px; display: flex; gap: 28px; justify-content: center; flex-wrap: wrap;">
+          <span><i class="fab fa-github"></i> <a href="https://github.com/erickwyte" target="_blank" style="color: var(--primary); text-decoration: none;">github.com/erickwyte</a></span>
           <span><i class="fas fa-clock"></i> Free Consultation</span>
-          <span><i class="fas fa-shield-alt"></i> 24/7 Support</span>
+          <span><i class="fas fa-shield-alt"></i> Ongoing Support</span>
+          <span><i class="fas fa-rocket"></i> Fast Turnaround</span>
         </div>
       </div>
     </div>
   </section>
 </main>
+
 <footer>
-  <div class="container">© 2026 Erick Angayia — Full-Stack Developer | Institutional & Business Systems. Built with security and scale in mind.</div>
+  <div class="container">© 2026 Erick Angayia — Web Developer | Professional Websites & Custom Business Systems. Built for Kenyan businesses.</div>
 </footer>
 
 <script>
-  // Projects with clickable images and direct demo buttons (fully interactive)
   const projectsData = [
+    { 
+      title: "Resort Booking Platform", 
+      desc: "Complete resort management system with online booking, room inventory, guest check-in/out, billing and housekeeping module.", 
+      features: ["Room availability tracking", "Invoice generation", "Guest history & reports"], 
+      stack: ["Node.js", "Express", "MongoDB"], 
+      icon: "fa-umbrella-beach",
+      demoLink: "https://erickwyte.github.io/resort-demo/",
+      demoLabel: "View Demo →"
+    },
     { 
       title: "School Management Suite", 
       desc: "Complete system for student records, fees tracking, exam results, attendance & parent portal. Reduced fee collection delays by 70%.", 
       features: ["Student registration", "Fee statements & payments", "Exam grading & report cards"], 
       stack: ["React", "Node.js", "MySQL"], 
-      img: "https://placehold.co/600x400/1E3A5F/FFFFFF?text=School+Management+Demo",
+      icon: "fa-school",
       demoLink: "https://erickwyte.github.io/school-demo/",
-      demoLabel: "View School Demo →"
+      demoLabel: "View Demo →"
     },
     { 
       title: "Church Management System", 
-      desc: "Member database, tithes/offerings, small groups, event registration and financial reporting.", 
-      features: ["Member directory", "Tithe & donation tracking", "Group management"], 
+      desc: "Member database, tithes/offerings, small groups, event registration and financial reporting for modern churches.", 
+      features: ["Member directory", "Tithe & donation tracking", "Group management & events"], 
       stack: ["Next.js", "Express", "PostgreSQL"], 
-      img: "https://placehold.co/600x400/2C5F7A/FFFFFF?text=Church+System",
-      demoLink: "#systems",
-      demoLabel: "Learn More →"
+      icon: "fa-church",
+      demoLink: "https://erickwyte.github.io/church-demo/",
+      demoLabel: "View Demo →"
     },
     { 
       title: "Construction ERP Dashboard", 
-      desc: "Project tracking, supplier invoices, material inventory, contractor payroll dashboard.", 
+      desc: "Project tracking, supplier invoices, material inventory, contractor payroll dashboard for construction companies.", 
       features: ["Project milestones", "Expense approvals", "Inventory stock levels"], 
       stack: ["Laravel", "React", "MongoDB"], 
-      img: "https://placehold.co/600x400/3D5A80/FFFFFF?text=Construction+ERP",
-      demoLink: "#contact",
-      demoLabel: "Request Demo →"
-    },
-    { 
-      title: "Finance Reconciliation Engine", 
-      desc: "Bank statement matching, transaction categorization, ledger audit trails, and reconciliation reports.", 
-      features: ["Automated reconciliation", "Ledger import/export", "Audit logs"], 
-      stack: ["Django", "React", "PostgreSQL"], 
-      img: "https://placehold.co/600x400/4B6F8C/FFFFFF?text=Finance+Engine",
-      demoLink: "#contact",
-      demoLabel: "Schedule Call →"
-    },
-    { 
-      title: "Resort Booking & Management", 
-      desc: "Online booking, room inventory, guest check-in/out, billing and housekeeping module.", 
-      features: ["Room availability", "Invoice generation", "Guest history"], 
-      stack: ["Node.js", "Express", "MongoDB"], 
-      img: "https://placehold.co/600x400/5D8A9F/FFFFFF?text=Resort+Booking",
-      demoLink: "#contact",
-      demoLabel: "See Features →"
+      icon: "fa-hard-hat",
+      demoLink: "https://erickwyte.github.io/construction-demo/",
+      demoLabel: "View Demo →"
     },
     { 
       title: "Plumbing Business System", 
-      desc: "Job scheduling, customer invoices, stock tracking, technician routes & profit analytics.", 
+      desc: "Job scheduling, customer invoices, stock tracking, technician routes & profit analytics for service businesses.", 
       features: ["Job assignment", "Inventory management", "Estimates & invoices"], 
       stack: ["React", "Firebase", "Node.js"], 
-      img: "https://placehold.co/600x400/6F9FB2/FFFFFF?text=Plumbing+Solution",
+      icon: "fa-wrench",
+      demoLink: "https://erickwyte.github.io/plumbing-demo/",
+      demoLabel: "View Demo →"
+    },
+    { 
+      title: "Finance Reconciliation Engine", 
+      desc: "Bank statement matching, transaction categorization, ledger audit trails, and comprehensive reconciliation reports.", 
+      features: ["Automated reconciliation", "Ledger import/export", "Audit logs & compliance"], 
+      stack: ["Django", "React", "PostgreSQL"], 
+      icon: "fa-chart-line",
       demoLink: "#contact",
-      demoLabel: "Get Quote →"
+      demoLabel: "Request Demo →"
     }
   ];
 
-  // Render projects with premium interactive cards: image clickable, demo button, new tab support
   const projectsGrid = document.getElementById('projectsGrid');
   if (projectsGrid) {
     projectsGrid.innerHTML = projectsData.map(p => `
       <div class="card">
-        <a href="${p.demoLink}" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-          <img class="card-img" src="${p.img}" alt="${p.title} dashboard interface" loading="lazy">
-        </a>
-
-        <i class="fas fa-database card-icon"></i>
-
+        <i class="fas ${p.icon} card-icon"></i>
         <h3>${p.title}</h3>
-
         <p>${p.desc}</p>
-
         <ul class="project-feature-list">
           ${p.features.map(f => `<li><i class="fas fa-check-circle"></i> ${f}</li>`).join('')}
         </ul>
-
         <div class="tech-stack">
           ${p.stack.map(t => `<span class="tech-tag">${t}</span>`).join('')}
         </div>
-
         <a href="${p.demoLink}" 
-           target="_blank" 
+           target="${p.demoLink !== '#contact' ? '_blank' : '_self'}" 
            class="btn-primary"
            style="margin-top:18px; display:inline-flex; text-decoration:none; font-size:0.85rem; padding:10px 20px;">
            <i class="fas fa-external-link-alt"></i>
@@ -604,10 +753,10 @@
   }
 
   const skillsData = [
-    { name: "Frontend Dashboards", items: ["React / Next.js", "Tailwind / Admin Templates", "Responsive UI", "State Management"] },
+    { name: "Frontend Websites", items: ["HTML5 / CSS3 / JavaScript", "Responsive Design", "Modern UI/UX", "Performance Optimization"] },
     { name: "Backend Systems", items: ["Node.js / Express", "Laravel / Django", "REST APIs", "Authentication (JWT, RBAC)"] },
     { name: "Database & Infrastructure", items: ["MySQL / PostgreSQL", "MongoDB / Firebase", "Data Modeling", "Backup & Recovery"] },
-    { name: "Business Logic", items: ["CRUD Systems", "PDF/Excel Exports", "Payment Integration", "Reporting Engines"] }
+    { name: "M-Pesa & Payments", items: ["M-Pesa Integration", "Payment Confirmation", "Receipt Generation", "Transaction Logging"] }
   ];
   const skillsGrid = document.getElementById('skillsGrid');
   if (skillsGrid) {
@@ -622,11 +771,9 @@
     `).join('');
   }
 
-  // Navigation and WhatsApp interactions
-  document.getElementById('exploreSystemsBtn')?.addEventListener('click', () => document.getElementById('systems').scrollIntoView({ behavior: 'smooth' }));
+  document.getElementById('exploreDemosBtn')?.addEventListener('click', () => document.getElementById('demos').scrollIntoView({ behavior: 'smooth' }));
   document.getElementById('contactQuickBtn')?.addEventListener('click', () => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }));
 
-  // Enhanced Hamburger Menu Logic
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const navLinks = document.getElementById('navLinks');
   const closeMenuBtn = document.getElementById('closeMenuBtn');
@@ -645,7 +792,6 @@
   hamburgerBtn?.addEventListener('click', openMenu);
   closeMenuBtn?.addEventListener('click', closeMenu);
   
-  // Close menu when clicking on any nav link
   navItems.forEach(link => {
     link.addEventListener('click', (e) => {
       closeMenu();
@@ -660,15 +806,13 @@
     });
   });
   
-  // Close menu on ESC key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && navLinks.classList.contains('show')) {
       closeMenu();
     }
   });
 
-  // Scroll Spy Active State
-  const sections = ['home', 'systems', 'projects', 'skills', 'contact'];
+  const sections = ['home', 'demos', 'systems', 'projects', 'skills', 'contact'];
   const navMenuItems = document.querySelectorAll('.nav-links a[data-nav]');
   
   function setActive() {
